@@ -2,6 +2,7 @@
   "name": "fluenui-react-beta",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://prudpeixie.github.io/fluenui-react-beta-example",
   "dependencies": {
     "@fluentui/react-components": "^9.0.0-rc.1",
     "@testing-library/jest-dom": "^5.16.1",
@@ -14,15 +15,17 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "source-map-explorer": "^2.5.2",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "react-scripts build && surge --domain fluentui-react-beta.surge.sh"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

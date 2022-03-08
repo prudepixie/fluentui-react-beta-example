@@ -1,8 +1,8 @@
 {
-  "name": "fluenui-react-beta",
+  "name": "fluentui-react-beta",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://prudpeixie.github.io/fluenui-react-beta-example",
+  "homepage": "https://prudpeixie.github.io/fluentui-react-beta-example",
   "dependencies": {
     "@fluentui/react-components": "^9.0.0-rc.1",
     "@testing-library/jest-dom": "^5.16.1",

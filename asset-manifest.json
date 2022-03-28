@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/fluentui-react-beta-example/static/css/main.abd64e84.css",
-    "main.js": "/fluentui-react-beta-example/static/js/main.43aeceab.js",
+    "main.js": "/fluentui-react-beta-example/static/js/main.c3eb768a.js",
     "index.html": "/fluentui-react-beta-example/index.html",
     "main.abd64e84.css.map": "/fluentui-react-beta-example/static/css/main.abd64e84.css.map",
-    "main.43aeceab.js.map": "/fluentui-react-beta-example/static/js/main.43aeceab.js.map"
+    "main.c3eb768a.js.map": "/fluentui-react-beta-example/static/js/main.c3eb768a.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.43aeceab.js"
+    "static/js/main.c3eb768a.js"
   ]
 }

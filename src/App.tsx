@@ -1,36 +1,30 @@
+import React from "react";
 import "./App.css";
-import Button from "./Button";
+import templates from "./templates";
 
-enum Component {
-  Button = "button",
-  Mixed = "mixed",
-  Card = "card",
-}
+type ComponentName = keyof typeof templates;
 
-type Repeat = string;
-
-const component = new URLSearchParams(window.location.search).get(
-  "component"
-) as Component;
-const repeat = new URLSearchParams(window.location.search).get(
-  "repeatNum"
-) as Repeat;
-
+const searchParam = new URLSearchParams(window.location.search);
+const component = searchParam.get("component") || "button";
+const repeat = searchParam.get("repeatNum") || "1";
+const isMultiple = component?.includes(",");
 const repeatNumber = parseInt(repeat);
+
 const renderComponent = () => {
-  switch (component) {
-    case Component.Button:
-      return repeatNumber > 0 ? (
-        [...Array(repeatNumber)].map((e, i) => <Button key={i}></Button>)
-      ) : (
-        <Button></Button>
-      );
-    case Component.Card:
-      return <div>this is a card</div>;
-    case Component.Mixed:
-      return <div>this is a mixed</div>;
-    default:
-      return <Button></Button>;
+  if (isMultiple) {
+    const componentList: string[] = component.split(",");
+    const combinedTemplates = componentList.map(
+      (component) => templates[component as ComponentName] as JSX.Element
+    );
+    return Array(repeatNumber)
+      .fill(combinedTemplates)
+      .flat()
+      .map((template, i) => React.cloneElement(template, { key: i }));
+  } else {
+    return [...Array(repeatNumber)].map((e, i) => {
+      const template = templates[component as ComponentName] as JSX.Element;
+      return React.cloneElement(template, { key: i });
+    });
   }
 };
 
